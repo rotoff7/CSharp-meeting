@@ -11,6 +11,7 @@ while (index<size)
 var massive = string.Join(" ", numbers); //Этот момент не понятен
 Console.WriteLine("Получившийся исходный массив: ");
 Console.WriteLine(massive);
+
 int max = 0;
 int max_index = 0;
 index = 0;
@@ -28,13 +29,17 @@ int help = numbers[size - 1];
 numbers[size - 1] = max;
 numbers[max_index] = help;
 
-
+var massive2_0 = string.Join(" ", numbers); // Еще раз, иначе выведет старый массив
 
 Console.Write("Максимальное число в массиве: ");
 Console.WriteLine(max);
 Console.WriteLine("Результативный массив: ");
-Console.WriteLine(massive);
+Console.WriteLine(massive2_0);
 
 // int help = numbers[size - 1];
 // numbers[size - 1] = max;
 // numbers[max_index] = help;
+// Console.WriteLine("Помощь: ");
+// Console.WriteLine(numbers[6]);
+// Console.WriteLine(help);
+// Console.WriteLine(max_index);
