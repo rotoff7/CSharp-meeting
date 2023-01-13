@@ -1,4 +1,4 @@
-﻿int[] numbers = { 1, 7, 3, 5, 4};
+﻿int[] numbers = { 1, 2, 9, 5, 8};
 int index = 0;
 int size = numbers.Length;
 int max = 0;
