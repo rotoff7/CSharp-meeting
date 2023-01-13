@@ -1,6 +1,6 @@
 ﻿Console.Clear();
 
-int xa = 2, ya = 1,
+int xa = 2, ya = 2,
 xb = 2, yb = 30,
 xc = 100, yc = 30;
 
@@ -14,7 +14,7 @@ Console.WriteLine("+");
 Console.SetCursorPosition(xc, yc);
 Console.WriteLine("+");
 
-int x = xa, y = ya;
+int x = xa, y = ya; // В видео x = xa, y = xb (почему-то)
 
 int index = 0;
 while (index < count)
@@ -35,9 +35,9 @@ while (index < count)
     x = (x + xc) / 2;
     y = (x + yc) / 2;
     }
-Console.SetCursorPosition(x, y);
-Console.WriteLine("+");
-index = index + 1;
+    Console.SetCursorPosition(x, y);
+    Console.WriteLine("+");
+    index++;
 }
 
 
