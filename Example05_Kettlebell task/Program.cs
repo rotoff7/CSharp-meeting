@@ -1,8 +1,16 @@
-﻿int[] numbers = { 1, 7, 3, 5, 4};
+﻿Console.Write("Введите размер массива: ");
+string SizeFromConsole = Console.ReadLine();
+int size = int.Parse(SizeFromConsole); // Перевод типа данных "string" в "int"
+int[] numbers = new int[size];
 int index = 0;
-int size = numbers.Length;
+while (index<size)
+{
+    numbers[index] = new Random().Next(1, 100);
+    index = index + 1;
+}
 int max = 0;
 int max_index = 0;
+index = 0;
 while (index<size)
 {
     if (numbers[index] > max)
