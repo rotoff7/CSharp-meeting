@@ -5,7 +5,7 @@ xb = 2, yb = 30,
 xc = 100, yc = 30;
 
 Console.Write("Введите кол-во точек: ");
-int count = Console.Read();
+int count = Convert.ToInt32(Console.Read());
 
 Console.SetCursorPosition(xa, ya);
 Console.WriteLine("+");
@@ -14,7 +14,7 @@ Console.WriteLine("+");
 Console.SetCursorPosition(xc, yc);
 Console.WriteLine("+");
 
-int x = xa, y = ya; // В видео x = xa, y = xb (почему-то)
+int x = xa, y = xb; // В видео x = xa, y = xb (почему-то)
 
 int index = 0;
 while (index < count)
