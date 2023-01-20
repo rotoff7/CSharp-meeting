@@ -6,48 +6,93 @@ void MassiveFiller(int[] massive) // Заполнение массива
     int index = 0;
     while (index < massive.Length)
     {
-        massive[index] = new Random().Next(1, 10);
+        massive[index] = new Random().Next(1, 100);
         index++;
     }
 }
 int MassiveSum(int[] fullmassive) // Расчет суммы всех чисел массива.
 {
-int index = 0;
-int sum = 0;
-while (index<fullmassive.Length)
-{
-    sum = sum + fullmassive[index];
-    index++;
-}
-return(sum);
+    int index = 0;
+    int sum = 0;
+    while (index < fullmassive.Length)
+    {
+        sum = sum + fullmassive[index];
+        index++;
+    }
+    return (sum);
 }
 bool SumChecker(int sumnum)
 {
-return sumnum > 100;
+    return sumnum > 1000;
 }
-void MassiveSorting(int[] bigmassive)
+int[] MassiveSorting(int[] bigmassive)
 {
-int index = 0;
-int maxPos = bigmassive[index];
-int max = bigmassive[index];
-int size = bigmassive.Length;
-int sortsize = bigmassive.Length;
-int count = 0;
-while (count < sortsize)
-{
-while (index<sortsize)
-{
-    if (bigmassive[index] > max)
+    int count = 0;
+    int size = bigmassive.Length;
+    int sortsize = size;
+    while (count < size)
     {
-        max = bigmassive[index];
-        maxPos = index;
+        int index = 0;
+        int max = 0;
+        int maxPos = 0;
+        while (index < sortsize)
+        {
+            if (bigmassive[index] > max)
+            {
+                max = bigmassive[index];
+                maxPos = index;
+            }
+            index++;
+        }
+        int help = bigmassive[sortsize - 1];
+        bigmassive[sortsize - 1] = max;
+        bigmassive[maxPos] = help;
+        sortsize = sortsize - 1;
+        count++;
     }
-    index++;
+    return (bigmassive);
 }
-int help = bigmassive[sortsize];
-bigmassive[sortsize] = max;
-bigmassive[maxPos] = help;
-sortsize = sortsize - 1;
-count++;
+int MaxFromMassive(int[] unsortmassive)
+{
+    int index = 0;
+    int localmax = 0;
+    while (index < unsortmassive.Length)
+    {
+        if (unsortmassive[index] > localmax)
+            localmax = unsortmassive[index];
+        index++;
+    }
+    return (localmax);
 }
-}
+
+
+int defaultvalue = 20;
+int[] resultmassive = new int[defaultvalue];
+MassiveFiller(resultmassive);
+var filledmassive = string.Join(" ", resultmassive);
+Console.WriteLine($"Исходный сгенерированный массив: {filledmassive}");
+bool res = SumChecker(MassiveSum(resultmassive));
+int[] sortedmassive = MassiveSorting(resultmassive);
+var varsortedmassive = string.Join(" ", sortedmassive);
+int massivemax = MaxFromMassive(resultmassive);
+if (res == true)
+    Console.WriteLine($"Сумма чисел в массиве больше 1000. \r\nОтсортированный массив будет иметь вид {varsortedmassive}");
+else
+    Console.WriteLine($"Сумма числе массива меньше 1000. Максимальное значение числа в массиве -> {massivemax}");
+
+Console.WriteLine("Some other code");
+
+int[] newmassive = new int [defaultvalue];
+MassiveFiller(newmassive);
+var filledmassive2 = string.Join(" ", newmassive);
+Console.WriteLine($"Исходный сгенерированный массив: {filledmassive2}");
+res = SumChecker(MassiveSum(newmassive));
+int[] sortedmassive2 = MassiveSorting(newmassive);
+var varsortedmassive2 = string.Join(" ", sortedmassive2);
+massivemax = MaxFromMassive(sortedmassive2);
+if (res == true)
+    Console.WriteLine($"Сумма чисел в массиве больше 1000. \r\nОтсортированный массив будет иметь вид {varsortedmassive2}");
+else
+    Console.WriteLine($"Сумма числе массива меньше 1000. Максимальное значение числа в массиве -> {massivemax}");
+
+    // Еще надо попробовать внести повторяющиеся куски кода, связанные с созданием массива и подготовкой его к выводу в методы.

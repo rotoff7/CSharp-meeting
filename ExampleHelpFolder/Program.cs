@@ -1,14 +1,22 @@
-﻿int[] bigmassive = { 12, 5, 1, 7, 8, 2, 25, 2 };
-int index = 0;
+﻿int defaultvalue = 20;
+int[] bigmassive = new int [defaultvalue];
+int ifill = 0;
+while (ifill < defaultvalue)
+{
+bigmassive[ifill] = new Random().Next(1,99);
+ifill++;
+}
+
+
+int count = 0;
 int size = bigmassive.Length;
 int sortsize = size;
-int count = 0;
-while (count
- < size)
+while (count < size)
 {
-    int max = 0;
-    int maxPos = index;
-    while (index < size)
+    int index = 0;
+    int max = 0; //
+    int maxPos = 0; //
+    while (index < sortsize)
     {
         if (bigmassive[index] > max)
         {
