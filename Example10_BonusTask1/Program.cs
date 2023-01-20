@@ -78,11 +78,11 @@ int massivemax = MaxFromMassive(resultmassive);
 if (res == true)
     Console.WriteLine($"Сумма чисел в массиве больше 1000. \r\nОтсортированный массив будет иметь вид {varsortedmassive}");
 else
-    Console.WriteLine($"Сумма числе массива меньше 1000. Максимальное значение числа в массиве -> {massivemax}");
+    Console.WriteLine($"Сумма чисел массива меньше 1000. Максимальное значение числа в массиве -> {massivemax}");
 
 Console.WriteLine("Some other code");
 
-int[] newmassive = new int [defaultvalue];
+int[] newmassive = new int[defaultvalue];
 MassiveFiller(newmassive);
 var filledmassive2 = string.Join(" ", newmassive);
 Console.WriteLine($"Исходный сгенерированный массив: {filledmassive2}");
@@ -93,6 +93,6 @@ massivemax = MaxFromMassive(sortedmassive2);
 if (res == true)
     Console.WriteLine($"Сумма чисел в массиве больше 1000. \r\nОтсортированный массив будет иметь вид {varsortedmassive2}");
 else
-    Console.WriteLine($"Сумма числе массива меньше 1000. Максимальное значение числа в массиве -> {massivemax}");
+    Console.WriteLine($"Сумма чисел массива меньше 1000. Максимальное значение числа в массиве -> {massivemax}");
 
-    // Еще надо попробовать внести повторяющиеся куски кода, связанные с созданием массива и подготовкой его к выводу в методы.
+// Еще надо попробовать внести повторяющиеся куски кода, связанные с созданием массива и подготовкой его к выводу в методы.
