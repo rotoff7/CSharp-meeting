@@ -1,40 +1,54 @@
 ﻿// сравнение введенного числа с имеющейся через функцию
 // 3 массива (5 ячеек, 7 ячеек, 9 ячеек) и максимальное
 
-// Console.WriteLine("Кодовое число");
-// int size = Convert.ToInt32(Console.ReadLine());
-// int length;
-// int max = 0;
-// void FillArray(int[] size)
-// {
-//     if (size == 1)
-//         length = 5;
-//     else if (size == 2)\
-//         length = 7;
-//     else if (size == 3)
-//         length = 9;
-//     else
-//         length = 0;
-//     int index = 0;
-//     while (index < length)
-//     {y
-//         col[index] = new Random().Next(1, 100);
-//         index++;
-//     }
-// }
 
-// int Max(int arg1)
+int size=0;
+int MagicTrick(int arg)
+{
+    if (arg == 1) size = 5;
+    if (arg == 2) size = 7;
+    if (arg == 3) size = 9;
+    return (size);
+}
 
+void MassiveFiller(int[] col)
+{
+    int size = col.Length;
+    int index = 0;
+    while (index < size)
+    {
+        col[index] = new Random().Next(1, 100);
+        index++;
+    }
+}
 
-// {
-//     int index = 0;
-//     while (index < length)
-//     {
-//         if (Array[index] > max)
-//             max = Array[index];
-//         index++;
-//     }
-//     return max;
-// }
+void MassiveRighter(int[] Fcol)
+{
+    var Fcole = string.Join(" ", Fcol);
+    Console.WriteLine("Получившийся исходный массив: ");
+    Console.WriteLine(Fcole);
+}
 
-// var massive = string.Join(" ", col);
+Console.WriteLine("Введите чудо-число");
+int MagicNumber = Convert.ToInt32(Console.ReadLine());
+
+MagicTrick(MagicNumber);
+
+int[] massive = new int[size];
+
+MassiveFiller(massive);
+
+MassiveRighter(massive);
+
+Console.WriteLine("SomeCode");
+
+Console.WriteLine("Введите чудо-число");
+MagicNumber = Convert.ToInt32(Console.ReadLine());
+
+MagicTrick(MagicNumber);
+
+int[] massive2 = new int[size];
+
+MassiveFiller(massive2);
+
+MassiveRighter(massive2);
