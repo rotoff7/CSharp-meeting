@@ -95,6 +95,12 @@ int minValue = 10;
 int maxValue = 99;
 
 int[,,] matrix = Matrix3DCreate(rowsSize, columnsSize, depthSize, minValue, maxValue);
-Matrix3DFiller(matrix, minValue, maxValue);
-Console.WriteLine("Заданный массив:");
-Print3DMatrix(matrix);
+Console.WriteLine(matrix.Length);
+if (matrix.Length <= 90)
+{
+    Matrix3DFiller(matrix, minValue, maxValue);
+    Console.WriteLine("Заданный массив:");
+    Print3DMatrix(matrix);
+}
+else Console.WriteLine("Кол-во элементов в массиве с такими параметрами превышает 90"
++ "Невозможно заполнить такой массив неповторяющимися двузначными числами");
